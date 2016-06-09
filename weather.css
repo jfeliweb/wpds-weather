@@ -106,3 +106,39 @@ a [class^="weather-"], a [class*=" weather-"] {
 #weather .currently {
   margin: 0 20px;
 }
+
+.icon {
+  overflow: hidden;
+  font-size: 12rem;
+  text-align: left;
+  padding: 0 0 0 1rem !important;
+  margin-top: -3%;
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 50%;
+  float: left;
+}
+
+.conditions {
+  text-align: left;
+  position: relative;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 50%;
+  float: left;
+  padding-top: 0;
+}
+
+.temperature {
+  font-size: 5.3rem;
+  display: block;
+  line-height: 1.1;
+  padding-top: .8rem;
+}
+
+.condition {
+  font-size: 2rem;
+  display: block;
+  line-height: 1.3;
+}
