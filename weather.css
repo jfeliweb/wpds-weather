@@ -16,7 +16,6 @@
 }
 
 i {
-  color: #fff;
   font-family: weather;
   font-size: 150px;
   font-weight: normal;
@@ -83,7 +82,6 @@ a [class^="weather-"], a [class*=" weather-"] {
 
 #weather h2 {
   margin: 0 0 8px;
-  color: #fff;
   font-size: 100px;
   font-weight: 300;
   text-align: center;
