@@ -17,7 +17,7 @@ function wpds_weather_load_plugin_textdomain() {
 add_action( 'plugins_loaded', 'wpds_weather_load_plugin_textdomain' );
 
 
-class weather_plugin extends WP_Widget {
+class wpds_weather_widget extends WP_Widget {
 
 	/**
 	* Constructor
@@ -87,13 +87,32 @@ class weather_plugin extends WP_Widget {
 		$select = $instance['select'];
 		echo $before_widget;
 		// Display the widget
-		echo '<link rel="stylesheet" href="'. plugins_url( 'weather.css' , __FILE__ ) .'">';
 		echo '<script type="text/javascript">var units ="' . $select . '";var place ="' . $place . '";</script>';
-		echo '<script src="'. plugins_url( 'weather.js' , __FILE__ ) .'"></script>';
 		echo '<div id="weather"></div>';
 		echo $after_widget;
 	}
 }
 
-// register widget
-add_action('widgets_init', create_function('', 'return register_widget("weather_plugin");'));
+/**
+* Register and load the widget
+*/
+function wpds_weather_load_widget() {
+    register_widget( 'wpds_weather_widget' );
+}
+add_action( 'widgets_init', 'wpds_weather_load_widget' );
+
+/**
+* Load scripts and styles
+*/
+function wpds_weather_load_scripts()
+{
+	wp_register_style( 'wpds-weather-style', plugins_url( '/weather.css', __FILE__ ) );
+	wp_enqueue_style( 'wpds-weather-style' );
+
+	wp_register_script( 'simpleWeather', '//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js', array ('jquery'), false, false);
+	wp_enqueue_script( 'simpleWeather' );
+
+	wp_register_script( 'wpds-weather-script', plugins_url( '/weather.js', __FILE__ ), array('jquery'), false, true );
+	wp_enqueue_script( 'wpds-weather-script' );
+}
+add_action( 'wp_enqueue_scripts', 'wpds_weather_load_scripts' );
