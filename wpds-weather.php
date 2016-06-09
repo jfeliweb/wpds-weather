@@ -50,12 +50,15 @@ class weather_plugin extends WP_Widget {
 	<input class="widefat" id="<?php echo $this->get_field_id('place'); ?>" name="<?php echo $this->get_field_name('place'); ?>" type="text" value="<?php echo $place; ?>" />
 </p>
 <p>
-	<label for="<?php echo $this->get_field_id('select'); ?>"><?php _e('Fahrenheit or Celsius', 'wpds-weather'); ?></label>
+	<label for="<?php echo $this->get_field_id('select'); ?>"><?php _e('Temperature scale', 'wpds-weather'); ?></label>
 	<select name="<?php echo $this->get_field_name('select'); ?>" id="<?php echo $this->get_field_id('select'); ?>" class="widefat">
 	<?php
-	$options = array('f', 'c');
-	foreach ($options as $option) {
-	echo '<option value="' . $option . '" id="' . $option . '"', $select == $option ? ' selected="selected"' : '', '>', $option, '</option>';
+	$options = array(
+		'c' => __('Celsius'),
+		'f' => __('Fahrenheit'), 
+	);
+	foreach ($options as $k => $v) {
+		echo '<option value="' . $k . '" id="' . $k . '"', $select == $k ? ' selected="selected"' : '', '>', $v, '</option>';
 	}
 	?>
 	</select>
