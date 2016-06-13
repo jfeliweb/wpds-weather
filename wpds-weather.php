@@ -87,8 +87,7 @@ class wpds_weather_widget extends WP_Widget {
 		$select = $instance['select'];
 		echo $before_widget;
 		// Display the widget
-		echo '<script type="text/javascript">var units ="' . $select . '";var place ="' . $place . '";</script>';
-		echo '<div id="weather"></div>';
+		echo '<div class="weather" data-unit="' . $select . '" data-place="' . $place . '"></div>';
 		echo $after_widget;
 	}
 }
