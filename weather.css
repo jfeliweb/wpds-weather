@@ -17,6 +17,7 @@
 .weather i.icon {
 	font-family: weather;
 	font-size: 170px;
+	font-size: 8.85vw;
 	font-weight: normal;
 	font-style: normal;
 	line-height: 1.0;
@@ -84,6 +85,7 @@ a [class^="weather-"], a [class*=" weather-"] {
 	margin-left: 2rem;
 	margin-top: 2rem;
 	font-size: 6rem;
+	font-size: 3.15vw;
 	display: inline-block;
 	line-height: 1.1;
 	vertical-align: middle;
@@ -92,5 +94,6 @@ a [class^="weather-"], a [class*=" weather-"] {
 .condition {
 	display: block;
 	font-size: 2rem;
+	font-size: 1.05vw;
 	line-height: 1.3;
 }
