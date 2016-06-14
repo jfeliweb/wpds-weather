@@ -1,7 +1,13 @@
 jQuery(document).ready(function ($) {
-	$('.weather').each(function(){
-		var elem = $(this);
-		$.simpleWeather({
+	updateWeather();
+	// Update weather every half hour
+	setInterval(updateWeather, 30 * 60 * 1000);
+});
+
+function updateWeather() {
+	jQuery('.weather').each(function(){
+		var elem = jQuery(this);
+		jQuery.simpleWeather({
 			location: elem.attr('data-place'),
 			unit: elem.attr('data-unit'),
 			success: function(weather) {
@@ -13,4 +19,4 @@ jQuery(document).ready(function ($) {
 			}
 		});
 	});
-});
+}
