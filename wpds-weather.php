@@ -108,10 +108,10 @@ function wpds_weather_load_scripts()
 	wp_register_style( 'wpds-weather-style', plugins_url( '/weather.css', __FILE__ ) );
 	wp_enqueue_style( 'wpds-weather-style' );
 
-	wp_register_script( 'simpleWeather', '//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js', array ('jquery'), false, false);
+	wp_register_script( 'simpleWeather', '//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js', array ('jquery'), false, true);
 	wp_enqueue_script( 'simpleWeather' );
 
-	wp_register_script( 'wpds-weather-script', plugins_url( '/weather.js', __FILE__ ), array('jquery'), false, true );
+	wp_register_script( 'wpds-weather-script', plugins_url( '/weather.js', __FILE__ ), array('jquery', 'simpleWeather'), false, true );
 	wp_enqueue_script( 'wpds-weather-script' );
 }
 add_action( 'wp_enqueue_scripts', 'wpds_weather_load_scripts' );
