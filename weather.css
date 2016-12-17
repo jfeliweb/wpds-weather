@@ -12,6 +12,7 @@
 .weather {
 	text-align: center;
 	margin-bottom: 20px;
+	background-repeat: no-repeat;
 }
 
 .weather i.icon {

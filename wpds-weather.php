@@ -5,7 +5,7 @@ Plugin Name: WPDS Weather Widget
 Plugin URI: http://pixelydo.com/work/wordpress-digital-signage/
 Description: The weather for WPDS. Many thanks to @fleetingftw for SimpleWeatherJS.
 Author: Nate Jones
-Version: 1.0
+Version: 1.1.0
 Author URI: http://pixelydo.com/
 Text Domain: wpds-weather
 */
